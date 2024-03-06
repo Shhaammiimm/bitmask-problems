@@ -1,0 +1,11 @@
+//1<=n<=1e15
+ll ans(ll n){
+ if(n<2)return n;
+ ll msb=log2(n);
+ return msb*(1LL<<(msb-1))+n-(1LL<<msb)+1+ans(n-(1LL<<msb));
+}
+void solve(){
+   ll n;
+   cin>>n;
+   cout<<ans(n)<<nl;
+}
